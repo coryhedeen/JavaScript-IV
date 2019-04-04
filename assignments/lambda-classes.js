@@ -97,8 +97,8 @@ class ProjectManager extends Instructor {
   standUp(channel){
     return `${this.name} announces to ${channel}, @${channel} standy times!​​​​​`;
   }
-  debugsCode(object1, object2, subject){
-    return `${kia.name} debugs ${angelo.name}'s code on ${subject}`;
+  debugsCode(object, subject){
+    return `${this.name} debugs ${Student.name}'s code on ${subject}`;
   }
 }
 
@@ -195,4 +195,4 @@ console.log(kia.listsSubjects());
 console.log(angelo.PRAssignment('Ruby'));
 console.log(nikki.sprintChallenge('Constructors'));
 console.log(anita.standUp('Career_Presentations'));
-console.log(danny.debugsCode(randy, angelo, 'CSS'));
+console.log(danny.debugsCode(angelo, 'CSS'));
