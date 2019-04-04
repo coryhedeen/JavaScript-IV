@@ -54,9 +54,6 @@ class Person {
   }
 }
 
-
-
-
 class Instructor extends Person {
   constructor(inAttributes){
     super(inAttributes);
@@ -68,15 +65,13 @@ class Instructor extends Person {
     return `Today we are learning about ${subject}`;
   }
   grade(student, subject){
-    return `${student.name} receives a perfect score on ${subject}`;
+    return `${student.name} received a perfect score on ${subject}`;
   }
 }
 
-
-
 class Student extends Person {
   constructor(studentAttributes){
-    super(studentAttributes){
+    super(studentAttributes)
       this.previousBackground = studentAttributes.previousBackground;
       this.className = studentAttributes.className;
       this.favSubjects = studentAttributes.favSubjects;
@@ -85,15 +80,13 @@ class Student extends Person {
       return this.favSubjects;
     }
     PRAssignment(subject){
-      return `${student.name} has submitted a PR for ${subject}`;
+      return `${this.name} has submitted a PR for ${subject}`;
     }
     sprintChallenge(subject){
-      return `${student.name} has begun sprint challenge on ${subject}`
+      return `${this.name} has begun sprint challenge on ${subject}`
     }
-  }
+
 }
-
-
 
 class ProjectManager extends Instructor {
   constructor(projAttributes){
@@ -104,7 +97,102 @@ class ProjectManager extends Instructor {
   standUp(channel){
     return `${this.name} announces to ${channel}, @${channel} standy times!​​​​​`;
   }
-  debugsCode(name, subject){
-    return `${name} debugs ${student.name}'s code on ${subject}`;
+  debugsCode(object1, object2, subject){
+    return `${kia.name} debugs ${angelo.name}'s code on ${subject}`;
   }
 }
+
+const jerry = new Instructor({
+  name: 'Jerry',
+  age: 36,
+  location: 'Raleigh',
+  gender: 'M',
+  specialty: 'Javascript',
+  favLanguage: 'React',
+  catchPhrase: 'Takes one to know one.'
+});
+
+const amy = new Instructor({
+  name: 'Amy',
+  age: 43,
+  location: 'San Francisco',
+  gender: 'F',
+  specialty: 'CSS',
+  favLanguage: 'C+',
+  catchPhrase: 'Relax.'
+});
+
+const randy = new Instructor({
+  name: 'Randy',
+  age: 23,
+  location: 'Michigan',
+  gender: 'M',
+  specialty: 'HTML',
+  favLanguage: 'Python',
+  catchPhrase: 'Wherever you go, there you are.'
+});
+
+const kia = new Student({
+  name: 'Kia',
+  age: 18,
+  location: 'Florida',
+  gender: 'F',
+  previousBackground: 'I was a Lifegaurd in High School and a member of the swim team.',
+  className: 'Web19',
+  favSubjects: ['HTML', 'CSS', 'Python', 'Ruby']
+});
+
+const angelo = new Student({
+  name: 'Angelo',
+  age: 25,
+  location: 'Kentucky',
+  gender: 'M',
+  previousBackground: 'I played football in college.',
+  className: 'Web16',
+  favSubjects: ['Functions', 'Arrays', 'Preprocessors']
+});
+
+const nikki = new Student({
+  name: 'Nikki',
+  age: 31,
+  location: 'New Hampshire',
+  gender: 'F',
+  previousBackground: 'I have been a receptionist since high school.',
+  className: 'Web27',
+  favSubjects: ['Syntax', 'Array methods', 'Prototypes']
+});
+
+const mashonda = new ProjectManager({
+  name: 'Mashonda',
+  age: 28,
+  location: 'Nashville',
+  gender: 'F',
+  gradClassName: 'Web3',
+  favInstructor: 'Demarcus'
+});
+
+const anita = new ProjectManager({
+  name: 'Anita',
+  age: 45,
+  location: 'Wisconsin',
+  gender: 'F',
+  gradClassName: 'Web4',
+  favInstructor: 'Josh'
+});
+
+const danny = new ProjectManager({
+  name: 'Danny',
+  age: 60,
+  location: 'Colorado',
+  gender: 'M',
+  gradClassName: 'Web5',
+  favInstructor: 'Gina'
+});
+
+console.log(randy.demo('Python'));
+console.log(amy.grade(nikki, 'Arrays'));
+console.log(kia.listsSubjects());
+console.log(angelo.PRAssignment('Ruby'));
+console.log(nikki.sprintChallenge('Constructors'));
+console.log(anita.standUp('Career_Presentations'));
+console.log(danny.debugsCode(randy, angelo, 'CSS'));
